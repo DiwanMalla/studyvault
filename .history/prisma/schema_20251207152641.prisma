@@ -1,0 +1,73 @@
+generator client {
+  provider        = "prisma-client-js"
+  output          = "../node_modules/.prisma/client"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Subject {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  slug        String   @unique
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  topics      Topic[]
+}
+
+model Topic {
+  id          String   @id @default(uuid())
+  name        String
+  slug        String   @unique
+  description String?
+  subjectId   String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  Note        Note[]
+  documents   Document[]
+  subject     Subject  @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+
+  @@index([subjectId])
+}
+
+model Document {
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  blobUrl     String
+  pageCount   Int
+  topic       Topic    @relation(fields: [topicId], references: [id])
+  topicId     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Note {
+  id             String     @id
+  title          String
+  description    String
+  price          Float      @default(0)
+  thumbnailUrl   String?
+  pdfUrl         String
+  pdfPages       Int
+  topicId        String
+  isFree         Boolean    @default(true)
+  isActive       Boolean    @default(true)
+  accessDuration Int?
+  views          Int        @default(0)
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime
+  Topic          Topic      @relation(fields: [topicId], references: [id], onDelete: Cascade)
+
+
+  @@index([isActive])
+  @@index([topicId])
+}
+
+
+
+
+

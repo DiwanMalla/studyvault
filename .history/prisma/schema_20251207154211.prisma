@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Subject {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  slug        String   @unique
+  description String?
+  icon        String?  // Emoji or icon name
+  color       String?  // Tailwind color class
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  topics      Topic[]
+}
+
+model Topic {
+  id          String     @id @default(uuid())
+  name        String
+  slug        String     @unique
+  description String?
+  subjectId   String
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  documents   Document[]
+  subject     Subject    @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+
+  @@index([subjectId])
+}
+
+model Document {
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  blobUrl     String   // Private Vercel Blob URL - never exposed to client
+  pageCount   Int
+  fileSize    Int?     // File size in bytes
+  topic       Topic    @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  topicId     String
+  views       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([topicId])
+}
+
+
+
+
+

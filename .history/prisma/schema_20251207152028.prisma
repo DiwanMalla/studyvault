@@ -1,0 +1,123 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Subject {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  slug        String   @unique
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  topics      Topic[]
+}
+
+model Topic {
+  id          String   @id @default(uuid())
+  name        String
+  slug        String   @unique
+  description String?
+  subjectId   String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  Note        Note[]
+  documents   Document[]
+  subject     Subject  @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+
+  @@index([subjectId])
+}
+
+model Document {
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  blobUrl     String
+  pageCount   Int
+  topic       Topic    @relation(fields: [topicId], references: [id])
+  topicId     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Note {
+  id             String     @id
+  title          String
+  description    String
+  price          Float      @default(0)
+  thumbnailUrl   String?
+  pdfUrl         String
+  pdfPages       Int
+  topicId        String
+  isFree         Boolean    @default(true)
+  isActive       Boolean    @default(true)
+  accessDuration Int?
+  views          Int        @default(0)
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime
+  Topic          Topic      @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  Purchase       Purchase[]
+
+  @@index([isActive])
+  @@index([topicId])
+}
+
+model Purchase {
+  id                 String        @id
+  userId             String
+  noteId             String
+  amount             Float
+  esewaTransactionId String?       @unique
+  screenshotUrl      String?
+  status             PaymentStatus @default(PENDING)
+  expiresAt          DateTime?
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime
+  Note               Note          @relation(fields: [noteId], references: [id], onDelete: Cascade)
+  User               User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, noteId])
+  @@index([noteId])
+  @@index([status])
+  @@index([userId])
+}
+
+model Session {
+  id         String   @id
+  userId     String
+  deviceInfo String
+  ipAddress  String
+  lastActive DateTime @default(now())
+  createdAt  DateTime @default(now())
+  User       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model User {
+  id        String     @id
+  email     String     @unique
+  name      String?
+  clerkId   String     @unique
+  role      Role       @default(STUDENT)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime
+  Purchase  Purchase[]
+  Session   Session[]
+}
+
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REFUNDED
+}
+
+enum Role {
+  ADMIN
+  STUDENT
+}

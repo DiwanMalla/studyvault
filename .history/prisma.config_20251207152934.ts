@@ -1,0 +1,1 @@
+prisma / prisma.config.ts;
