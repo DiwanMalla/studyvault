@@ -111,8 +111,8 @@ export default async function HomePage() {
                 Completely Free
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                No paywalls, subscription fees, or hidden costs. Education
-                should be accessible to everyone.
+                No paywalls, subscription fees, or hidden costs. Education should
+                be accessible to everyone.
               </p>
             </div>
 
@@ -137,8 +137,8 @@ export default async function HomePage() {
                 Instant Access
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                No registration required. Jump straight into your study
-                materials without any friction.
+                No registration required. Jump straight into your study materials
+                without any friction.
               </p>
             </div>
           </div>
@@ -239,3 +239,4 @@ export default async function HomePage() {
     </div>
   );
 }
+
