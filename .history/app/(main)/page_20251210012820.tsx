@@ -39,14 +39,14 @@ export default async function HomePage() {
               </span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-8 leading-[1.1]">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-8 leading-[1.1]">
               Master Medicine with
               <span className="block text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600 pb-2">
                 Confidence & Clarity
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground dark:text-gray-200 mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
               Access high-quality study materials for Medicine, Surgery,
               Pediatrics, and more. Secure, distraction-free, and designed for
               medical students.
@@ -150,10 +150,10 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 Explore Subjects
               </h2>
-              <p className="text-gray-600 dark:text-gray-300 max-w-xl">
+              <p className="text-gray-600 max-w-xl">
                 Browse our comprehensive collection of medical study materials,
                 organized by subject for easy access.
               </p>

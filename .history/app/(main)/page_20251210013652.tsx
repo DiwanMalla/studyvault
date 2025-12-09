@@ -150,10 +150,10 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 Explore Subjects
               </h2>
-              <p className="text-gray-600 dark:text-gray-300 max-w-xl">
+              <p className="text-gray-600 max-w-xl">
                 Browse our comprehensive collection of medical study materials,
                 organized by subject for easy access.
               </p>

@@ -50,15 +50,11 @@ export default function DocumentCard({
             <div className="space-y-2 pt-4 border-t border-gray-200 dark:border-gray-700 text-xs text-gray-500 dark:text-gray-400">
               <div className="flex items-center justify-between">
                 <span>Pages</span>
-                <span className="font-semibold text-gray-900 dark:text-white">
-                  {pageCount}
-                </span>
+                <span className="font-semibold text-gray-900 dark:text-white">{pageCount}</span>
               </div>
               <div className="flex items-center justify-between">
                 <span>Views</span>
-                <span className="font-semibold text-gray-900 dark:text-white">
-                  {views}
-                </span>
+                <span className="font-semibold text-gray-900 dark:text-white">{views}</span>
               </div>
               <div className="flex items-center justify-between">
                 <span>Added</span>

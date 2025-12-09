@@ -25,9 +25,7 @@ export default async function SubjectsPage() {
           <Breadcrumb items={[{ label: "Subjects" }]} />
 
           <div className="mt-4">
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-              All Subjects
-            </h1>
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white">All Subjects</h1>
             <p className="mt-2 text-gray-600 dark:text-gray-300">
               Browse our complete collection of {subjects.length} study subjects
             </p>

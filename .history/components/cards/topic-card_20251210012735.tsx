@@ -19,7 +19,7 @@ export default function TopicCard({
 }: TopicCardProps) {
   return (
     <Link href={`/subjects/${subjectSlug}/${slug}`} className="group block">
-      <div className="relative overflow-hidden rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-xl dark:shadow-blue-900/30 transition-all duration-300 hover:border-gray-300 dark:hover:border-blue-600">
+      <div className="relative overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:border-gray-300">
         <div className="p-6">
           {/* Icon and name */}
           <div className="flex items-center gap-3 mb-4">

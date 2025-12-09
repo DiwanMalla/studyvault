@@ -92,9 +92,7 @@ export default async function SubjectPage({
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-          Topics
-        </h2>
+        <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">Topics</h2>
 
         {subject.topics.length === 0 ? (
           <EmptyState

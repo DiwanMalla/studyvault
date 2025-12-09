@@ -302,10 +302,14 @@ export default function ManageSubjectsPage() {
       <div className="mb-12">
         <div className="flex items-center justify-between mb-2">
           <div>
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h1
+              className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white"
+            >
               Subjects & Topics
             </h1>
-            <p className="mt-2 text-lg text-gray-600 dark:text-gray-300">
+            <p
+              className="mt-2 text-lg text-gray-600 dark:text-gray-300"
+            >
               Organize your MBBS curriculum
             </p>
           </div>
