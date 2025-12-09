@@ -4,7 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "name": "studyvault",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
     "@prisma/adapter-pg": "^7.1.0",
     "@prisma/client": "^7.1.0",
     "@vercel/blob": "^2.0.0",
@@ -31,7 +35,6 @@
     "dotenv": "^17.2.3",
     "eslint": "^9",
     "eslint-config-next": "16.0.7",
-    "next": "16.0.7",
     "prisma": "^7.1.0",
     "tailwindcss": "^4",
     "typescript": "^5"
