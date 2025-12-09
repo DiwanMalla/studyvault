@@ -47,29 +47,27 @@ export default async function SubjectsPage() {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {subjects.map(
-              (subject: {
-                id: string;
-                name: string;
-                slug: string;
-                description: string | null;
-                icon: string | null;
-                color: string | null;
-                createdAt: Date;
-                updatedAt: Date;
-                _count: { topics: number };
-              }) => (
-                <SubjectCard
-                  key={subject.id}
-                  name={subject.name}
-                  slug={subject.slug}
-                  description={subject.description}
-                  icon={subject.icon}
-                  color={subject.color}
-                  topicCount={subject._count.topics}
-                />
-              )
-            )}
+            {subjects.map((subject: {
+              id: string;
+              name: string;
+              slug: string;
+              description: string | null;
+              icon: string | null;
+              color: string | null;
+              createdAt: Date;
+              updatedAt: Date;
+              _count: { topics: number };
+            }) => (
+              <SubjectCard
+                key={subject.id}
+                name={subject.name}
+                slug={subject.slug}
+                description={subject.description}
+                icon={subject.icon}
+                color={subject.color}
+                topicCount={subject._count.topics}
+              />
+            ))}
           </div>
         )}
       </div>
