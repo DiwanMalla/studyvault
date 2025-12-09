@@ -50,8 +50,7 @@ export default async function SubjectPage({
   }
 
   const totalDocuments = subject.topics.reduce(
-    (acc: number, topic: { _count: { documents: number } }) =>
-      acc + topic._count.documents,
+    (acc: number, topic: { _count: { documents: number } }) => acc + topic._count.documents,
     0
   );
 
