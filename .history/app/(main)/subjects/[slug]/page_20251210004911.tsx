@@ -102,29 +102,27 @@ export default async function SubjectPage({
           />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {subject.topics.map(
-              (topic: {
-                id: string;
-                name: string;
-                slug: string;
-                description: string | null;
-                icon: string | null;
-                color: string | null;
-                subjectId: string;
-                createdAt: Date;
-                updatedAt: Date;
-                _count: { documents: number };
-              }) => (
-                <TopicCard
-                  key={topic.id}
-                  name={topic.name}
-                  slug={topic.slug}
-                  subjectSlug={slug}
-                  description={topic.description}
-                  documentCount={topic._count.documents}
-                />
-              )
-            )}
+            {subject.topics.map((topic: {
+              id: string;
+              name: string;
+              slug: string;
+              description: string | null;
+              icon: string | null;
+              color: string | null;
+              subjectId: string;
+              createdAt: Date;
+              updatedAt: Date;
+              _count: { documents: number };
+            }) => (
+              <TopicCard
+                key={topic.id}
+                name={topic.name}
+                slug={topic.slug}
+                subjectSlug={slug}
+                description={topic.description}
+                documentCount={topic._count.documents}
+              />
+            ))}
           </div>
         )}
       </div>
