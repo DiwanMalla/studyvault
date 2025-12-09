@@ -57,7 +57,6 @@ export default function Header() {
 
           {/* CTA */}
           <div className="flex items-center gap-4">
-            <ThemeToggle />
             <div className="hidden sm:flex items-center gap-2 text-sm text-gray-500">
               <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-green-100 text-green-700 text-xs font-medium">
                 ✓ 100% Free

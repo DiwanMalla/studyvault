@@ -79,8 +79,12 @@ export function ThemeToggle() {
       aria-label={`Theme: ${theme}`}
       title={`Current theme: ${theme}. Click to cycle.`}
     >
-      {theme === "light" && <Sun className="h-5 w-5 text-amber-500" />}
-      {theme === "dark" && <Moon className="h-5 w-5 text-blue-500" />}
+      {theme === "light" && (
+        <Sun className="h-5 w-5 text-amber-500" />
+      )}
+      {theme === "dark" && (
+        <Moon className="h-5 w-5 text-blue-500" />
+      )}
       {theme === "system" && (
         <Monitor className="h-5 w-5 text-gray-600 dark:text-gray-400" />
       )}
