@@ -18,7 +18,7 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <button className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800">
+      <button className="inline-flex items-center justify-center rounded-md w-10 h-10 bg-transparent">
         <div className="w-5 h-5" />
       </button>
     );
@@ -29,14 +29,15 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors"
+      className="inline-flex items-center justify-center rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground w-10 h-10 transition-colors"
       title={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
       {isDark ? (
-        <Sun className="w-5 h-5 text-yellow-500" />
+        <Sun className="w-4 h-4 text-foreground" />
       ) : (
-        <Moon className="w-5 h-5 text-gray-600" />
+        <Moon className="w-4 h-4 text-foreground" />
       )}
+      <span className="sr-only">Toggle theme</span>
     </button>
   );
 }

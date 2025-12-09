@@ -16,7 +16,7 @@ export default function Header() {
             <div className="w-10 h-10 rounded-xl bg-linear-to-br from-blue-600 to-indigo-600 flex items-center justify-center">
               <span className="text-white font-bold text-lg">📚</span>
             </div>
-            <span className="text-xl font-bold bg-linear-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-linear-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent dark:from-blue-400 dark:to-indigo-400">
               StudyVault
             </span>
           </Link>
@@ -27,8 +27,8 @@ export default function Header() {
               href="/"
               className={`text-sm font-medium transition-colors ${
                 pathname === "/"
-                  ? "text-blue-600"
-                  : "text-gray-600 hover:text-gray-900"
+                  ? "text-blue-600 dark:text-blue-400"
+                  : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
               }`}
             >
               Home
@@ -37,8 +37,8 @@ export default function Header() {
               href="/subjects"
               className={`text-sm font-medium transition-colors ${
                 pathname.startsWith("/subjects")
-                  ? "text-blue-600"
-                  : "text-gray-600 hover:text-gray-900"
+                  ? "text-blue-600 dark:text-blue-400"
+                  : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
               }`}
             >
               Browse
@@ -47,8 +47,8 @@ export default function Header() {
               href="/about"
               className={`text-sm font-medium transition-colors ${
                 pathname === "/about"
-                  ? "text-blue-600"
-                  : "text-gray-600 hover:text-gray-900"
+                  ? "text-blue-600 dark:text-blue-400"
+                  : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
               }`}
             >
               About
@@ -57,11 +57,11 @@ export default function Header() {
 
           {/* CTA */}
           <div className="flex items-center gap-4">
-            <div className="hidden sm:flex items-center gap-2 text-sm text-gray-500">
-              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-green-100 text-green-700 text-xs font-medium">
+            <div className="hidden sm:flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-medium">
                 ✓ 100% Free
               </span>
-              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-medium">
+              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-xs font-medium">
                 🔒 Secure
               </span>
             </div>

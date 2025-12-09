@@ -36,30 +36,30 @@ export default function SubjectCard({
 
   return (
     <Link href={`/subjects/${slug}`} className="group block h-full">
-      <div className="relative h-full p-6 rounded-2xl bg-white border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-gray-300">
+      <div className="relative h-full p-6 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-gray-300 dark:hover:border-gray-600">
         <div className="flex items-start justify-between mb-4">
           <div
             className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl ${colorClass}`}
           >
             {displayIcon}
           </div>
-          <div className="px-3 py-1 rounded-full bg-gray-50 border border-gray-100 text-xs font-medium text-gray-500 group-hover:bg-gray-100 transition-colors">
+          <div className="px-3 py-1 rounded-full bg-gray-50 dark:bg-gray-700 border border-gray-100 dark:border-gray-600 text-xs font-medium text-gray-500 dark:text-gray-400 group-hover:bg-gray-100 dark:group-hover:bg-gray-600 transition-colors">
             {topicCount} {topicCount === 1 ? "Topic" : "Topics"}
           </div>
         </div>
 
-        <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
           {name}
         </h3>
 
         {description && (
-          <p className="text-sm text-gray-600 line-clamp-2 mb-6">
+          <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-2 mb-6">
             {description}
           </p>
         )}
 
         <div className="absolute bottom-6 right-6 opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-          <ArrowRight className="w-5 h-5 text-blue-600" />
+          <ArrowRight className="w-5 h-5 text-blue-600 dark:text-blue-400" />
         </div>
       </div>
     </Link>
