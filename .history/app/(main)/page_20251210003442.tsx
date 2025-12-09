@@ -180,30 +180,24 @@ export default async function HomePage() {
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {subjects
-                .slice(0, 6)
-                .map(
-                  (subject: {
-                    id: string;
-                    name: string;
-                    slug: string;
-                    description: string | null;
-                    icon: string | null;
-                    color: string | null;
-                    createdAt: Date;
-                    updatedAt: Date;
-                    _count: { topics: number };
-                  }) => (
-                    <SubjectCard
-                      key={subject.id}
-                      name={subject.name}
-                      slug={subject.slug}
-                      description={subject.description}
-                      icon={subject.icon}
-                      topicCount={subject._count.topics}
-                    />
-                  )
-                )}
+              {subjects.slice(0, 6).map((subject: {
+                id: string;
+                name: string;
+                slug: string;
+                description?: string;
+                icon?: string;
+                color?: string;
+                _count: { topics: number };
+              }) => (
+                <SubjectCard
+                  key={subject.id}
+                  name={subject.name}
+                  slug={subject.slug}
+                  description={subject.description}
+                  icon={subject.icon}
+                  topicCount={subject._count.topics}
+                />
+              ))}
             </div>
           )}
 

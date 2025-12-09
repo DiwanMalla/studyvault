@@ -55,21 +55,18 @@ export default async function TopicPage({
   }
 
   const totalPages = topic.documents.reduce(
-    (
-      acc: number,
-      doc: {
-        id: string;
-        title: string;
-        description: string | null;
-        blobUrl: string;
-        pageCount: number;
-        fileSize: number | null;
-        topicId: string;
-        views: number;
-        createdAt: Date;
-        updatedAt: Date;
-      }
-    ) => acc + doc.pageCount,
+    (acc: number, doc: {
+      id: string;
+      title: string;
+      description?: string;
+      blobUrl: string;
+      pageCount: number;
+      fileSize?: number;
+      topicId: string;
+      views: number;
+      createdAt: Date;
+      updatedAt: Date;
+    }) => acc + doc.pageCount,
     0
   );
 
@@ -114,30 +111,28 @@ export default async function TopicPage({
           />
         ) : (
           <div className="space-y-4">
-            {topic.documents.map(
-              (document: {
-                id: string;
-                title: string;
-                description: string | null;
-                blobUrl: string;
-                pageCount: number;
-                fileSize: number | null;
-                topicId: string;
-                views: number;
-                createdAt: Date;
-                updatedAt: Date;
-              }) => (
-                <DocumentCard
-                  key={document.id}
-                  id={document.id}
-                  title={document.title}
-                  description={document.description}
-                  pageCount={document.pageCount}
-                  views={document.views}
-                  createdAt={document.createdAt}
-                />
-              )
-            )}
+            {topic.documents.map((document: {
+              id: string;
+              title: string;
+              description?: string;
+              blobUrl: string;
+              pageCount: number;
+              fileSize?: number;
+              topicId: string;
+              views: number;
+              createdAt: Date;
+              updatedAt: Date;
+            }) => (
+              <DocumentCard
+                key={document.id}
+                id={document.id}
+                title={document.title}
+                description={document.description}
+                pageCount={document.pageCount}
+                views={document.views}
+                createdAt={document.createdAt}
+              />
+            ))}
           </div>
         )}
       </div>

@@ -187,11 +187,9 @@ export default async function HomePage() {
                     id: string;
                     name: string;
                     slug: string;
-                    description: string | null;
-                    icon: string | null;
-                    color: string | null;
-                    createdAt: Date;
-                    updatedAt: Date;
+                    description?: string;
+                    icon?: string;
+                    color?: string;
                     _count: { topics: number };
                   }) => (
                     <SubjectCard
